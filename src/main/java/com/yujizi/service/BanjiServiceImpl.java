@@ -33,7 +33,7 @@ public class BanjiServiceImpl implements BanjiService {
     @Transactional
     public void insertRecord(Banji banji) {
         banjiMapper.insert(banji);
-        int i=1/0;
+//        int i=1/0;
     }
 
     @Override
