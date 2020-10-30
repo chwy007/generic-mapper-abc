@@ -23,17 +23,4 @@ public class MapperApp {
     public static void main(String[] args) {
         SpringApplication.run(MapperApp.class);
     }
-
-
-
-    @Bean
-    public InternalResourceViewResolver setupViewResolver() {
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        /** 设置视图路径的前缀 */
-        resolver.setPrefix("/WEB-INF/jsp/");
-        /** 设置视图路径的后缀 */
-        resolver.setSuffix(".jsp");
-        return resolver;
-    }
-
 }

@@ -12,7 +12,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * @Date: 2020/10/30 15:26
  * @Version: 1.0
  */
-//@Configuration
-//@EnableWebMvc
-public class WebConfig {
+
+public class MyConfig {
 }
