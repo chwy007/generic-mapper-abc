@@ -4,10 +4,12 @@ import com.yujizi.pojo.Banji;
 import com.yujizi.service.BanjiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @ProjectName: generic-mapper-abc
@@ -54,7 +56,7 @@ public class BanjiController {
         for (Banji banji : banjis) {
             System.out.println(banji);
         }
-        int i=1/0;
+//        int i=1/0;
         return banjis;
 
     }

@@ -31,5 +31,12 @@
     <h3>hello,我是banji.jsp</h3>
     <button type="button" onclick="func1()">点我查询</button>
     <button type="button" onclick="func2()">点我插入</button>
+
+
+    <form action="${pageContext.request.contextPath}/banji/insert" method="post">
+        <p>请输入id: <input type="text" name="id" /></p>
+        <p>请输入name: <input type="text" name="name" /></p>
+        <input type="submit" value="Submit" />
+    </form>
 </body>
 </html>
