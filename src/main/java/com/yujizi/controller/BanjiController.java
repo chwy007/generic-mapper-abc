@@ -61,4 +61,11 @@ public class BanjiController {
 
     }
 
+    @RequestMapping("delete/{id}")
+    @ResponseBody
+    public String deleteById(@PathVariable Integer id){
+        banjiService.deleteById(id);
+        return "success";
+    }
+
 }

@@ -17,4 +17,5 @@ public interface BanjiService {
     Banji findById(Integer id);
     void insertRecord(Banji banji);
     List<Banji> selectAll();
+    void deleteById(Integer id);
 }

@@ -42,5 +42,11 @@ public class BanjiServiceImpl implements BanjiService {
         return banjis;
     }
 
+    @Override
+    @Transactional
+    public void deleteById(Integer id) {
+        banjiMapper.deleteByPrimaryKey(id);
+    }
+
 
 }
