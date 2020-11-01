@@ -46,15 +46,14 @@
         }
         h3
         {
-            color:orange;
+            color: #ffa500;
             text-align:left;
         }
         p
         {
             font-family:"Times New Roman";
-            font-size:14px;
+            font-size:10px;
         }
-
     </style>
 
     <title>HELLO jsp</title>
@@ -87,7 +86,7 @@
     <button type="button" onclick="func1()">根据id查询</button>
     <input id="3s" type="text" name="id">
 
-    <br><br>
+    <h3>query all</h3>
 
     <button type="button" onclick="func2()">点我查询所有</button>
 

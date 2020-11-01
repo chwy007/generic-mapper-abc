@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -27,10 +28,6 @@ public class BanjiController {
     @Autowired
     private BanjiService banjiService;
 
-    @GetMapping("/jsptest")
-    public String jspTest(){
-        return "banji";
-    }
 
     @RequestMapping("find/{id}")
     @ResponseBody
