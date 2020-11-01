@@ -12,17 +12,17 @@
 
     <script>
         function func1(){
-            $(".tran").remove();
+            $("p").remove();
             $.get("${pageContext.request.contextPath}/banji/find/"+$("#3s").val(),function (data){
-                $(".1t").append("<p class='tran'>"+data.name+data.id+"</p>");
+                $(".1t").append("<p>"+data.name+data.id+"</p>");
             })
         }
 
         function func2(){
-            $(".transient").remove();
+            $("p").remove();
             $.get("${pageContext.request.contextPath}/banji/all",function (data) {
                 $.each(data,function (i,val){
-                    $(".tb1").append("<tr class='transient'><td>"+val.id+"</td><td>"+val.name+"</td></tr>");
+                    $(".1t").append("<p>"+i+val.name+val.id+"</p>");
 
                 })
             })
@@ -39,24 +39,6 @@
 
     </script>
 
-    <style>
-        body
-        {
-            background-color:#d0e4fe;
-        }
-        h3
-        {
-            color:orange;
-            text-align:left;
-        }
-        p
-        {
-            font-family:"Times New Roman";
-            font-size:14px;
-        }
-
-    </style>
-
     <title>HELLO jsp</title>
 </head>
 <body>
@@ -65,19 +47,16 @@
     <div class="1t"></div>
 
 
-    <table class="tb1" border="1">
-        <tr>
-            <th>id</th>
-            <th>name</th>
-        </tr>
-    </table>
+    <p id="2s" class="ts2"></p>
 
 
 
-    <h3>register</h3>
+
+
 
     <form action="${pageContext.request.contextPath}/banji/insert" method="post">
-        <p>请输入id: <input type="text" name="id"/></p>
+
+        <p>请输入id: <input type="text" name="id" /></p>
         <p>请输入name: <input type="text" name="name" /></p>
         <input type="submit" value="注册" />
     </form>
@@ -87,7 +66,7 @@
     <button type="button" onclick="func1()">根据id查询</button>
     <input id="3s" type="text" name="id">
 
-    <br><br>
+    <h3>======================================</h3>
 
     <button type="button" onclick="func2()">点我查询所有</button>
 
@@ -97,11 +76,7 @@
     <input id="4s" type="text" name="id">
 
 
-    <h3>modify</h3>
-    <form action="${pageContext.request.contextPath}/banji/modify" method="post">
-        <p>请输入id: <input type="text" name="id"/></p>
-        <p>请输入name: <input type="text" name="name" /></p>
-        <input type="submit" value="修改" />
+
 
 </body>
 </html>

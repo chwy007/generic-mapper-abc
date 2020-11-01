@@ -68,4 +68,11 @@ public class BanjiController {
         return "success";
     }
 
+    @RequestMapping("modify")
+    @ResponseBody
+    public String modifyById(Integer id,String name){
+        banjiService.modifyById(id,name);
+        return "success";
+    }
+
 }

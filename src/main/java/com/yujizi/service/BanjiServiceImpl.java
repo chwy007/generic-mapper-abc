@@ -49,4 +49,14 @@ public class BanjiServiceImpl implements BanjiService {
     }
 
 
+
+    @Override
+    @Transactional
+    public void modifyById(Integer id,String name) {
+        Banji banji=banjiMapper.selectByPrimaryKey(id);
+        banji.setName(name);
+        banjiMapper.updateByPrimaryKey(banji);
+    }
+
+
 }
