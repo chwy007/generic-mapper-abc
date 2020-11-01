@@ -3,6 +3,7 @@ package com.yujizi.config;
 import com.yujizi.aspect.LoginInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
@@ -25,8 +26,6 @@ public class MvcConfig extends WebMvcConfigurationSupport {
     protected void addInterceptors(InterceptorRegistry registry) {
         List<String> list=new ArrayList<>();
         list.add("/sys/**");
-        list.add("/static/**");
-
         registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/banji/**")
                 .excludePathPatterns(list);
     }
@@ -36,5 +35,12 @@ public class MvcConfig extends WebMvcConfigurationSupport {
     @Override
     protected void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("/WEB-INF/jsp/", ".jsp");
+    }
+
+
+    @Override
+    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/static/**")
+                .addResourceLocations("classpath:/static/");
     }
 }
