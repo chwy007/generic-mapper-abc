@@ -52,7 +52,7 @@
         p
         {
             font-family:"Times New Roman";
-            font-size:10px;
+            font-size:12px;
         }
     </style>
 
@@ -101,6 +101,7 @@
         <p>请输入id: <input type="text" name="id"/></p>
         <p>请输入name: <input type="text" name="name" /></p>
         <input type="submit" value="修改" />
+    </form>
 
 </body>
 </html>

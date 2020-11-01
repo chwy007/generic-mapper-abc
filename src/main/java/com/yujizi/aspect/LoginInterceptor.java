@@ -25,10 +25,8 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String user = (String) request.getSession().getAttribute("user");
         if("root".equals(user)){
-            System.out.println(request.getContextPath());
             return true;
         };
-        System.out.println(request.getContextPath());
         System.out.println("非法请求，已被被拦截");
         return false;
 
