@@ -3,6 +3,7 @@ package com.yujizi.mapper;
 import com.yujizi.pojo.Banji;
 import tk.mybatis.mapper.common.Mapper;
 
+
 /**
  * @ProjectName: generic-mapper-abc
  * @Package: com.yujizi.mapper

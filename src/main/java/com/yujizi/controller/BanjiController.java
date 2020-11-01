@@ -39,11 +39,11 @@ public class BanjiController {
     }
 
     @RequestMapping("insert")
-    @ResponseBody
     public String insert(Integer id,String name){
         Banji banji=new Banji(id,name);
         banjiService.insertRecord(banji);
-        return "success";
+        return "redirect:/templates/hello.html";
+//        return "forward:/sys/hello"; 重定向页面网址发生变化，而转发不会
     }
 
     @RequestMapping("all")
@@ -53,7 +53,6 @@ public class BanjiController {
         for (Banji banji : banjis) {
             System.out.println(banji);
         }
-//        int i=1/0;
         return banjis;
 
     }

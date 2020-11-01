@@ -75,7 +75,7 @@
 
     <h3>register</h3>
 
-    <form action="${pageContext.request.contextPath}/banji/insert" method="post">
+    <form action="${pageContext.request.contextPath}/banji/insert" method="get">
         <p>请输入id: <input type="text" name="id"/></p>
         <p>请输入name: <input type="text" name="name" /></p>
         <input type="submit" value="注册" />
