@@ -12,9 +12,6 @@ spring:
     encoding:
       force: true
 
-
-
-
 #显示sql语句
 logging:
   level:
@@ -26,3 +23,8 @@ logging:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

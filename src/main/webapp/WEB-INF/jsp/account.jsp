@@ -20,8 +20,9 @@
 
         function func2(){
             $(".transient").remove();
-            $.get("${pageContext.request.contextPath}/account/all",function (data) {
-                $.each(data,function (i,val){
+            $.get("${pageContext.request.contextPath}/account/all",{pageNum:$("#pageNum").val(),pageSize:$("#pageSize").val()},function (data) {
+                $("#pageAll").text(data.pages);
+                $.each(data.list,function (i,val){
                     $("#tb1").append("<tr class='transient'><td>"+val.id+"</td><td>"+val.accountName+"</td><td>"+val.name+"</td><td>"+val.password+"</td><td>"+val.tips+"</td><td>"+val.createdTime+"</td><td>"+val.lastmodifiedTime+"</td></tr>");
 
                 })
@@ -93,7 +94,8 @@
             <th>createdTime</th>
             <th>lastmodifiedTime</th>
         </tr>
-    </table>
+    </table><br>
+    page <input id="pageNum" type="text" size="1">of <span id="pageAll"></span> pageSize<input id="pageSize" type="text" size="1">
 
 
 

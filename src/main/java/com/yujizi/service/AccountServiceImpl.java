@@ -1,5 +1,7 @@
 package com.yujizi.service;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.yujizi.mapper.AccountMapper;
 import com.yujizi.pojo.Account;
 import org.apache.commons.lang3.StringUtils;
@@ -56,9 +58,12 @@ public class AccountServiceImpl implements AccountService{
     }
 
     @Override
-    public List<Account> selectAll() {
+    public PageInfo<Account> selectAll(Integer pageNum,Integer pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<Account> list=accountMapper.selectAll();
 //        return accountMapper.queryAll();
-        return accountMapper.selectAll();
+        PageInfo<Account> pageInfo=new PageInfo<>(list);
+        return pageInfo;
     }
 
     @Override

@@ -24,8 +24,8 @@ public class MvcConfig extends WebMvcConfigurationSupport {
 
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/banji/**")
-                .addPathPatterns("/account/**");
+        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/banji/**");
+//                .addPathPatterns("/account/**");
     }
 
 

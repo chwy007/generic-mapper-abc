@@ -1,5 +1,6 @@
 package com.yujizi.service;
 
+import com.github.pagehelper.PageInfo;
 import com.yujizi.pojo.Account;
 import com.yujizi.pojo.Banji;
 
@@ -21,7 +22,7 @@ public interface AccountService {
 
     void insertEntry(Account account);
 
-    List<Account> selectAll();
+    PageInfo<Account> selectAll(Integer pageNum, Integer pageSize);
 
     void deleteById(Integer id);
 

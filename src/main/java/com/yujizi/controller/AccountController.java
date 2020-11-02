@@ -1,9 +1,11 @@
 package com.yujizi.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.yujizi.pojo.Account;
 import com.yujizi.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,8 +36,10 @@ public class AccountController {
 
     @RequestMapping("all")
     @ResponseBody
-    public List<Account> findAll(){
-        return accountService.selectAll();
+    public PageInfo<Account> findAll(Model model,Integer pageNum, Integer pageSize){
+        PageInfo<Account> pageInfo=accountService.selectAll(pageNum,pageSize);
+        model.addAttribute("pageInfo",pageInfo);
+        return pageInfo;
     }
 
     @RequestMapping("delete/{id}")

@@ -12,5 +12,9 @@
 </head>
 <body>
     <h3>注册成功</h3>
+    <%
+
+    %>
+    ${pageInfo}
 </body>
 </html>
