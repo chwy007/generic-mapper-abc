@@ -42,7 +42,7 @@ public class BanjiController {
     public String insert(Integer id,String name){
         Banji banji=new Banji(id,name);
         banjiService.insertRecord(banji);
-        return "redirect:/templates/hello.html";
+        return "redirect:/templates/globalException.html";
 //        return "forward:/sys/hello"; 重定向页面网址发生变化，而转发不会
     }
 

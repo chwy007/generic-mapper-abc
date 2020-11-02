@@ -20,10 +20,16 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("sys")
 public class LoginController {
 
-    @GetMapping("login")
-    public String denglu(HttpSession session,String user){
+    @GetMapping("banji/login")
+    public String banjiLogin(HttpSession session,String user){
         session.setAttribute("user",user);
         return "yjz";
+    }
+
+    @GetMapping("account/login")
+    public String accountLogin(HttpSession session,String user){
+        session.setAttribute("user",user);
+        return "account";
     }
 
     @GetMapping("hello")

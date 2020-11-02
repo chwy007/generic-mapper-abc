@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    @ResponseBody
     public String globalexcep(Exception e){
         System.out.println("未知异常！原因是"+e);
-        return "亲 服务器出现异常";
+        return "redirect:/templates/globalException.html";
     }
 
 }

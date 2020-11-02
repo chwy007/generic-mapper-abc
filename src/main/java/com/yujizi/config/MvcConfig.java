@@ -24,7 +24,8 @@ public class MvcConfig extends WebMvcConfigurationSupport {
 
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/banji/**");
+        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/banji/**")
+                .addPathPatterns("/account/**");
     }
 
 
@@ -37,9 +38,6 @@ public class MvcConfig extends WebMvcConfigurationSupport {
 
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/static/**")
-//                .addResourceLocations("classpath:/static/");
-
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/resources")
                 .addResourceLocations("classpath:/static")

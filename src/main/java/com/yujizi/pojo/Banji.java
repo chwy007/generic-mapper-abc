@@ -2,6 +2,7 @@ package com.yujizi.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -14,9 +15,11 @@ import javax.persistence.*;
  * @Date: 2020/10/30 11:40
  * @Version: 1.0
  */
+
 @Data
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 public class Banji {
 
     @Id
@@ -24,3 +27,5 @@ public class Banji {
     private String name;
 
 }
+
+
